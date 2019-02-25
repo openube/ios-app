@@ -2,20 +2,20 @@
 //  ArticlesTableViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 20/10/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import UserNotifications
 import CoreData
 import CoreSpotlight
 import RealmSwift
+import WallabagKit
+import WallabagCommon
 
 final class ArticlesTableViewController: UITableViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
-    let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
+    var wallabagSync: WallabagSyncing!
 
     lazy var realm: Realm = {
         do {
@@ -27,10 +27,7 @@ final class ArticlesTableViewController: UITableViewController {
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
-    var wallabagkit: WallabagKitProtocol!
-    var entryController: EntryController!
-
-    var mode: Setting.RetrieveMode = Setting.getDefaultMode() {
+    var mode: RetrieveMode = .allArticles {
         didSet {
             filteringList()
         }
@@ -55,7 +52,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {
-        mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
+        mode = RetrieveMode(rawValue: segue.identifier!)!
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
@@ -80,90 +77,43 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        analytics.sendScreenViewed(.articlesView)
+        wallabagSync = WallabagSyncing(kit: WallabagSession.shared.kit!)
+        wallabagSync.progress = { currentPage, maxPage in
+            DispatchQueue.main.async {[weak self] in
+                self?.progressView.progress = Float(currentPage) / Float(maxPage)
+            }
+            Log("Progress \(currentPage)/\(maxPage)")
+        }
+        self.mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
+
         progressView.isHidden = true
-        entryController = EntryController(wallabagKit: wallabagkit)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: .UIApplicationDidBecomeActive, object: nil)
-
-        refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: .wallabagStateChanged, object: nil)
 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
 
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-            navigationItem.searchController = searchController
-        } else {
-            tableView.tableHeaderView = searchController.searchBar
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
 
         filteringList()
         reloadUI()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: .wallabagkitAuthSuccess, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(authError), name: .wallabagkitAuthError, object: nil)
-    }
-
-    override func didMove(toParentViewController parent: UIViewController?) {
-        reloadUI()
-    }
-
-    @objc private func authError(_ notification: NSNotification) {
-        var message = "Authentication error".localized
-        if let notif = notification.object as? WallabagAuthError {
-            message =  notif.description
-        }
-        Setting.set(wallabagConfigured: false)
-        let alert = UIAlertController(title: "Error".localized, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok".localized, style: .destructive) { _ in
-            let homeController = self.storyboard?.instantiateInitialViewController()
-            self.present(homeController!, animated: false)
-        })
-        present(alert, animated: true)
-    }
-
-    @objc func pasteBoardAction() {
-        guard let pasteBoardUrl = UIPasteboard.general.url,
-            pasteBoardUrl.absoluteString != Setting.getPreviousPasteBoardUrl() else {
-                return
-        }
-        Setting.set(previousPasteBoardUrl: pasteBoardUrl.absoluteString)
-        let alertController = UIAlertController(title: "PasteBoard", message: pasteBoardUrl.absoluteString, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
-            self.entryController.add(url: pasteBoardUrl)
-        })
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-        present(alertController, animated: true)
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
     }
 
     @objc func handleRefresh() {
-        if nil != wallabagkit.accessToken {
+        progressView.isHidden = false
+        wallabagSync.sync { [weak self] in
             DispatchQueue.main.async {
-                if self.refreshControl?.isRefreshing ?? false {
-                    self.refreshControl?.endRefreshing()
-                }
-            }
-
-            self.refreshControl?.beginRefreshing()
-
-            entryController.sync { state in
-                switch state {
-                case .running:
-                    DispatchQueue.main.async {
-                        self.progressView.isHidden = false
-                        self.progressView.progress = Float(self.entryController.pageCompleted) / Float(self.entryController.maxPage)
-                    }
-                case .finished:
-                    DispatchQueue.main.async {
-                        self.progressView.isHidden = true
-                    }
-                case .error:
-                    break
-                }
+                self?.tableView.refreshControl?.endRefreshing()
+                self?.progressView.isHidden = true
             }
         }
+        Log("handle refresh")
     }
 
     // MARK: - Table view data source
@@ -188,31 +138,19 @@ final class ArticlesTableViewController: UITableViewController {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
         })
-        if #available(iOS 11.0, *) {
-            deleteAction.backgroundColor = UIColor(named: "DeleteColor")
-        } else {
-            deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
-        }
+        deleteAction.backgroundColor = UIColor(named: "DeleteColor")
 
         let starAction = UITableViewRowAction(style: .default, title: entry.isStarred ? "Unstar".localized : "Star".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.star(entry)
         })
-        if #available(iOS 11.0, *) {
-            starAction.backgroundColor = UIColor(named: "StarColor")
-        } else {
-            starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
-        }
+        starAction.backgroundColor = UIColor(named: "StarColor")
 
         let readAction = UITableViewRowAction(style: .default, title: entry.isArchived ? "Unread".localized : "Read".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.read(entry)
         })
-        if #available(iOS 11.0, *) {
-            readAction.backgroundColor = UIColor(named: "ReadColor")
-        } else {
-            readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
-        }
+        readAction.backgroundColor = UIColor(named: "ReadColor")
 
         return [deleteAction, starAction, readAction]
     }
@@ -243,7 +181,7 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
-    private func filteringList(_ predicate: NSPredicate? = nil) {
+    func filteringList(_ predicate: NSPredicate? = nil) {
         self.notificationToken?.invalidate()
         self.notificationToken = nil
 
@@ -280,18 +218,18 @@ final class ArticlesTableViewController: UITableViewController {
         try! realm.write {
             entry.isArchived = !entry.isArchived
         }
-        entryController.update(entry: entry)
+        WallabagSession.shared.update(entry)
     }
 
     private func star(_ entry: Entry) {
         try! realm.write {
             entry.isStarred = !entry.isStarred
         }
-        entryController.update(entry: entry)
+        WallabagSession.shared.update(entry)
     }
 
     private func delete(_ entry: Entry) {
-        entryController.delete(entry: entry)
+        WallabagSession.shared.delete(entry)
     }
 
     private func addArticle() {
@@ -302,9 +240,8 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text,
                 let url = URL(string: textfield) {
-                self.entryController.add(url: url)
+                WallabagSession.shared.add(url)
             }
-
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(alertController, animated: true)
@@ -312,40 +249,5 @@ final class ArticlesTableViewController: UITableViewController {
 
     private func reloadUI() {
         title = mode.humainReadable().localized
-    }
-}
-
-extension ArticlesTableViewController: UISearchResultsUpdating {
-    @objc func deferSearch(timer: Timer) {
-        guard let searchText = timer.userInfo as? String else {
-            return
-        }
-
-        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchText)
-        let predicateCompound =  NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
-
-        filteringList(predicateCompound)
-    }
-
-    func updateSearchResults(for searchController: UISearchController) {
-        Log("search: " + searchController.searchBar.text!)
-        let searchText = searchController.searchBar.text!
-        if ("" == searchText) {
-            return
-        }
-
-        searchTimer?.invalidate()
-        searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
-    }
-}
-
-extension UISearchBar {
-    public var textField: UITextField? {
-        let subViews = subviews.flatMap { $0.subviews }
-        guard let textField = (subViews.filter { $0 is UITextField }).first as? UITextField else {
-            return nil
-        }
-        return textField
     }
 }

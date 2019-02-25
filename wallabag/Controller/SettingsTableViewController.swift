@@ -2,16 +2,14 @@
 //  ParameterTableViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 23/11/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import AVFoundation
+import WallabagCommon
 
 final class SettingsTableViewController: UITableViewController {
 
-    let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
@@ -19,37 +17,39 @@ final class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var speechRateSlider: UISlider!
 
     @IBAction func speechRateChanged(_ sender: UISlider) {
-        Setting.setSpeechRate(value: sender.value)
+        setting.set(sender.value, for: .speechRate)
     }
 
     @IBAction func justifySwitch(_ sender: UISwitch) {
-        Setting.setJustifyArticle(value: sender.isOn)
+        setting.set(sender.isOn, for: .justifyArticle)
     }
 
     @IBAction func badgeSwitch(_ sender: UISwitch) {
-        Setting.setBadgeEnable(value: sender.isOn)
+        setting.set(sender.isOn, for: .badgeEnabled)
     }
 
     override func viewDidLoad() {
-        analytics.sendScreenViewed(.settingView)
         super.viewDidLoad()
 
         prepareDefaultList()
 
-        justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
-        badgeSwitch.setOn(Setting.isBadgeEnable(), animated: false)
-        currentThemeLabel.text = Setting.getTheme().ucFirst
+        justifySwitch.setOn(setting.get(for: .justifyArticle), animated: false)
+        badgeSwitch.setOn(setting.get(for: .badgeEnabled), animated: false)
+        currentThemeLabel.text = setting.get(for: .theme).ucFirst
 
         speechRateSlider.minimumValue = AVSpeechUtteranceMinimumSpeechRate
         speechRateSlider.maximumValue = AVSpeechUtteranceMaximumSpeechRate
-        speechRateSlider.value = Setting.getSpeechRate()
+        speechRateSlider.value = setting.get(for: .speechRate)
 
-        _ = NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { _ in
-            self.tableView.reloadData()
-            self.currentThemeLabel.text = Setting.getTheme().ucFirst
+        _ = NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { [weak self] _ in
+            self?.tableView.reloadData()
+            self?.currentThemeLabel.text = self?.setting.get(for: .theme).ucFirst
         }
     }
 
+    /**
+     * @todo clean reuseIdentifier
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             for row in 0 ... tableView.numberOfRows(inSection: indexPath.section) {
@@ -57,7 +57,7 @@ final class SettingsTableViewController: UITableViewController {
             }
 
             if let cell = tableView.cellForRow(at: indexPath) {
-                Setting.setDefaultMode(mode: Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)!)
+                setting.set(cell.reuseIdentifier!, for: .defaultMode)
                 cell.accessoryType = .checkmark
             }
 
@@ -75,7 +75,7 @@ final class SettingsTableViewController: UITableViewController {
     private func prepareDefaultList() {
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) {
-                if Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {
+                if RetrieveMode(rawValue: cell.reuseIdentifier!)?.rawValue == setting.get(for: .defaultMode) {
                     cell.accessoryType = .checkmark
                 }
             }

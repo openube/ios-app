@@ -2,21 +2,15 @@
 //  VoiceChoiceTableViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 24/07/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import AVFoundation
+import WallabagCommon
 
 final class VoiceChoiceTableViewController: UITableViewController {
 
-    let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
     let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
-
-    override func viewDidLoad() {
-        analytics.sendScreenViewed(.voiceChoiseView)
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return voices.count
@@ -28,7 +22,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
 
         cell.textLabel?.text = "\(voice.name) (\(voice.language))"
 
-        if voice.identifier == Setting.getSpeechVoice()?.identifier {
+        if voice.identifier == setting.getSpeechVoice()?.identifier {
             cell.accessoryType = .checkmark
         }
 
@@ -42,7 +36,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        Setting.setSpeechVoice(identifier: voices[indexPath.row].identifier)
+        setting.set(voices[indexPath.row].identifier, for: .speechVoice)
         _ = navigationController?.popViewController(animated: true)
     }
 }

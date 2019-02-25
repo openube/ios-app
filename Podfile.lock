@@ -4,7 +4,6 @@ PODS:
     - Alamofire (~> 4.5)
   - AlamofireNetworkActivityIndicator (2.2.1):
     - Alamofire (~> 4.7)
-  - GoogleAnalytics (3.17.0)
   - Mockingjay (2.0.1):
     - Mockingjay/Core (= 2.0.1)
     - Mockingjay/XCTest (= 2.0.1)
@@ -26,7 +25,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireImage (~> 3.3)
   - AlamofireNetworkActivityIndicator (~> 2.2)
-  - GoogleAnalytics
   - Mockingjay
   - RealmSwift
   - SideMenu (~> 3.1)
@@ -38,7 +36,6 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AlamofireNetworkActivityIndicator
-    - GoogleAnalytics
     - Mockingjay
     - Realm
     - RealmSwift
@@ -51,7 +48,6 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   AlamofireNetworkActivityIndicator: aeac50e6ecb78ec71a5f1f29098bcf4ec2962910
-  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
   RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
@@ -60,6 +56,6 @@ SPEC CHECKSUMS:
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: b6b7d37cef76d1339c2f87ac8731854f60db5abd
+PODFILE CHECKSUM: 446e02383d074c517a57e198858f3afcf52d8f9b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

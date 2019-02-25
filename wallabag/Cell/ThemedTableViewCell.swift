@@ -2,9 +2,6 @@
 //  ThemedTableViewCell.swift
 //  wallabag
 //
-//  Created by maxime marinel on 18/12/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 

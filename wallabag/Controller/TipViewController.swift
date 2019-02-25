@@ -2,17 +2,14 @@
 //  TipViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 10/06/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import StoreKit
 
-final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    let analytics = AnalyticsManager()
+final class TipViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]
+    let store: WallabagStore = WallabagStore()
     var product: SKProduct? {
         didSet {
             let formatter = NumberFormatter()
@@ -32,7 +29,6 @@ final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPa
         let payment = SKPayment(product: product!)
         SKPaymentQueue.default().add(payment)
         self.transactionInProgress = true
-        analytics.send(.tip)
     }
 
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
@@ -43,7 +39,6 @@ final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPa
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 tipButton.titleLabel?.text = "Thank you!!!"
-                analytics.send(.tipPurchased)
             case .failed:
                 Log("Transaction error")
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -72,7 +67,6 @@ final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        analytics.sendScreenViewed(.tipView)
 
         view.backgroundColor = ThemeManager.manager.getBackgroundColor()
         tipContent.text = "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.".localized

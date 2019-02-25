@@ -2,15 +2,12 @@
 //  ArticleTableViewCell.swift
 //  wallabag
 //
-//  Created by maxime marinel on 25/10/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import AlamofireImage
 import CoreData
 
-class ArticleTableViewCell: ThemedTableViewCell {
+final class ArticleTableViewCell: ThemedTableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var website: UILabel!
@@ -37,12 +34,7 @@ class ArticleTableViewCell: ThemedTableViewCell {
 
         readingTime.text = String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime])
 
-        if let previewPicture = entry.previewPicture,
-            let pictureURL = URL(string: previewPicture) {
-            previewImage.af_setImage(withURL: pictureURL)
-        } else {
-            previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
-        }
+        previewImage.display(entry: entry)
     }
 
     override func setupTheme() {

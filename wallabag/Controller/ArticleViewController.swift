@@ -2,19 +2,18 @@
 //  ArticleViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 23/10/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import TUSafariActivity
-import AVFoundation
 import RealmSwift
+import WallabagCommon
 
-final class ArticleViewController: UIViewController {
+protocol ArticleViewControllerProtocol {
+    var entry: Entry! { get set }
+}
 
-    lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
-    let analytics = AnalyticsManager()
+final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
+    var podcastController: PodcastViewController?
 
     var entry: Entry! {
         didSet {
@@ -27,11 +26,37 @@ final class ArticleViewController: UIViewController {
     var starHandler: ((_ entry: Entry) -> Void)?
     var addHandler: (() -> Void)?
 
+    enum PodcastViewState {
+        case show
+        case hidden
+    }
+    var podcastViewState: PodcastViewState = .hidden {
+        didSet {
+            if podcastViewState == .show {
+                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
+                               animations: {
+                                self.podcastView.center.y -= self.podcastView.bounds.height
+                                self.podcastView.layoutIfNeeded()
+                }, completion: nil)
+                self.podcastView.isHidden = false
+            } else {
+                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],
+                               animations: {
+                                self.podcastView.center.y += self.podcastView.bounds.height
+                                self.podcastView.layoutIfNeeded()
+                }, completion: {(_ completed: Bool) -> Void in
+                    self.podcastView.isHidden = true
+                })
+            }
+        }
+    }
+
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
     @IBOutlet weak var speechButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet weak var podcastView: UIView!
 
     @IBAction func add(_ sender: Any) {
         addHandler?()
@@ -47,18 +72,21 @@ final class ArticleViewController: UIViewController {
         updateUi()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? PodcastViewController {
+            controller.entry = entry
+            podcastController = controller
+            Log("prepare podcast view")
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        podcastViewState = .hidden
+    }
+
     @IBAction func speech(_ sender: Any) {
-        if !speechSynthetizer.isSpeaking {
-            let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
-            utterance.rate = Setting.getSpeechRate()
-            utterance.voice = Setting.getSpeechVoice()
-            speechSynthetizer.speak(utterance)
-            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
-            analytics.send(.synthesis(state: true))
-        } else {
-            speechSynthetizer.stopSpeaking(at: .word)
-            speechButton.image = #imageLiteral(resourceName: "lips")
-            analytics.send(.synthesis(state: false))
+        //podcastViewState = podcastViewState == .show ? .hidden : .show
+        if let podcastController = podcastController {
+            podcastController.playPressed(podcastController.playButton)
         }
     }
 
@@ -67,7 +95,6 @@ final class ArticleViewController: UIViewController {
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
         shareController.popoverPresentationController?.barButtonItem = sender
 
-        analytics.send(.shareArticle)
         present(shareController, animated: true)
     }
 
@@ -86,7 +113,6 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        analytics.sendScreenViewed(.articleView)
         navigationItem.title = entry.title
         updateUi()
         setupAccessibilityLabel()
@@ -96,15 +122,12 @@ final class ArticleViewController: UIViewController {
 
         UIApplication.shared.isIdleTimerDisabled = true
 
-        if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
-        }
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        speechSynthetizer.stopSpeaking(at: .immediate)
         UIApplication.shared.isIdleTimerDisabled = false
     }
 

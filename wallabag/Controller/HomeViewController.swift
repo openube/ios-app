@@ -2,22 +2,19 @@
 //  HomeViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 24/10/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
+import WallabagCommon
 
 final class HomeViewController: UIViewController {
 
-    let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
 
     @IBAction func authError(segue: UIStoryboardSegue) {
-        Setting.set(wallabagConfigured: false)
+        setting.set(false, for: .wallabagIsConfigured)
     }
 
     override func viewDidLoad() {
-        analytics.sendScreenViewed(.homeView)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.resetApp))
         gesture.numberOfTapsRequired = 10
         view.addGestureRecognizer(gesture)

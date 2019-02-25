@@ -9,7 +9,6 @@ target 'wallabag' do
     pod 'TUSafariActivity', '~> 1.0'
     pod 'SideMenu', '~> 3.1'
     pod 'RealmSwift'
-    pod 'GoogleAnalytics'
     
     target 'wallabagUITests' do
         inherit! :search_paths
