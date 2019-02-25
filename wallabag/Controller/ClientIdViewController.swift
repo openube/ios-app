@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import WallabagCommon
+import wallabagCommon
 
 final class ClientIdViewController: UIViewController {
 

@@ -2,9 +2,6 @@
 //  Utils.swift
 //  wallabag
 //
-//  Created by maxime marinel on 02/05/2018.
-//  Copyright © 2018 maxime marinel. All rights reserved.
-//
 
 import Foundation
 

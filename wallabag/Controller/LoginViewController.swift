@@ -4,8 +4,8 @@
 //
 
 import UIKit
-import WallabagKit
-import WallabagCommon
+import wallabagKit
+import wallabagCommon
 
 final class LoginViewController: UIViewController {
 

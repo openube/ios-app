@@ -368,15 +368,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
-                                <rect key="frame" x="102.5" y="130" width="170" height="21.5"/>
+                                <rect key="frame" x="102.5" y="130" width="170" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Maxime Marinel (@bourvill)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-Ao-UlA">
-                                <rect key="frame" x="50.5" y="627" width="274" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
@@ -395,15 +389,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qk9-mt-OdM" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="AO0-9k-JGk"/>
-                            <constraint firstItem="wsy-Ao-UlA" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="BU7-MP-UK6"/>
                             <constraint firstItem="ROP-iA-4oU" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="HrJ-vh-pOu"/>
                             <constraint firstItem="p4F-5W-KZX" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="Sax-sT-cq1"/>
                             <constraint firstItem="p4F-5W-KZX" firstAttribute="top" secondItem="OmZ-lq-KqG" secondAttribute="bottom" constant="8" id="Y5i-ga-fI1"/>
                             <constraint firstItem="OmZ-lq-KqG" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="amn-hj-Y0i"/>
-                            <constraint firstItem="xz0-RO-cpu" firstAttribute="top" secondItem="wsy-Ao-UlA" secondAttribute="bottom" constant="20" id="dgi-Gt-HnR"/>
                             <constraint firstItem="OmZ-lq-KqG" firstAttribute="top" secondItem="acV-B0-1hz" secondAttribute="bottom" constant="24" id="ljO-q6-Omk"/>
+                            <constraint firstItem="xz0-RO-cpu" firstAttribute="top" secondItem="qk9-mt-OdM" secondAttribute="bottom" constant="48" id="q5u-SG-mvP"/>
                             <constraint firstItem="ROP-iA-4oU" firstAttribute="centerY" secondItem="XKI-Xm-XQo" secondAttribute="centerY" id="qN1-py-CPU"/>
-                            <constraint firstItem="wsy-Ao-UlA" firstAttribute="top" secondItem="qk9-mt-OdM" secondAttribute="bottom" constant="8" id="szJ-fC-Qck"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="1Lt-G4-Rie"/>

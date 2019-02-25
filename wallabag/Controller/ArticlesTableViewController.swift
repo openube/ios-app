@@ -8,8 +8,8 @@ import UserNotifications
 import CoreData
 import CoreSpotlight
 import RealmSwift
-import WallabagKit
-import WallabagCommon
+import wallabagKit
+import wallabagCommon
 
 final class ArticlesTableViewController: UITableViewController {
 

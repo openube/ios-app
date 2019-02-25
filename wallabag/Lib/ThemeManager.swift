@@ -2,9 +2,6 @@
 //  ThemeManager.swift
 //  wallabag
 //
-//  Created by maxime marinel on 14/12/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 
@@ -24,7 +21,7 @@ class ThemeManager {
         currentTheme = White()
     }
 
-    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night()]
+    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
     private var currentTheme: ThemeProtocol
 
     func apply(_ themeName: String) {
@@ -39,7 +36,7 @@ class ThemeManager {
         let uiBarButton = UIBarButtonItem.appearance()
         uiBarButton.tintColor = currentTheme.tintColor
         uiBarButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
+            NSAttributedString.Key.font: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
             ], for: .normal)
 
         let uiLabel = UILabel.appearance()
@@ -47,7 +44,7 @@ class ThemeManager {
 
         let bar = UINavigationBar.appearance()
         bar.setBackgroundImage(currentTheme.navigationBarBackground, for: .default)
-        bar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: currentTheme.color]
+        bar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: currentTheme.color]
         bar.barStyle = currentTheme.barStyle
 
         let toolbar = UIToolbar.appearance()

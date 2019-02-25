@@ -2,9 +2,6 @@
 //  RegisterProcessUITests.swift
 //  wallabag
 //
-//  Created by maxime marinel on 03/01/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
-//
 
 import XCTest
 

@@ -2,11 +2,11 @@
 //  SyncOperation.swift
 //  wallabag
 //
-//  Created by maxime marinel on 20/01/2018.
-//  Copyright © 2018 maxime marinel. All rights reserved.
-//
 
 import Foundation
+import wallabagKit
+import RealmSwift
+import CoreSpotlight
 
 final class SyncOperation: Operation {
     enum State: String {
@@ -30,17 +30,15 @@ final class SyncOperation: Operation {
             didChangeValue(forKey: oldValue.keyPath)
         }
     }
+    var entries: WallabagKitCollection<WallabagKitEntry>?
+    let kit: WallabagKitProtocol
 
-    let entryController: EntryController
-    let page: Int
-    let queue: DispatchQueue
-    let wallabagKit: WallabagKitProtocol
+    init(kit: WallabagKitProtocol) {
+        self.kit = kit
+    }
 
-    init(entryController: EntryController, page: Int, queue: DispatchQueue, wallabagKit: WallabagKitProtocol) {
-        self.entryController = entryController
-        self.page = page
-        self.queue = queue
-        self.wallabagKit = wallabagKit
+    func setEntries(_ entries: WallabagKitCollection<WallabagKitEntry>) {
+        self.entries = entries
     }
 
     override func start() {
@@ -57,16 +55,67 @@ final class SyncOperation: Operation {
             state = .finished
         } else {
             state = .executing
-            wallabagKit.entry(parameters: ["page": page], queue: queue) { response in
-                switch response {
-                case .success(let collection):
-                    self.entryController.handle(result: collection.items)
-                case .error:
-                    //@todo handle error
-                    break
-                }
-                self.state = .finished
+            defer {
+                state = .finished
             }
+            do {
+                guard let entries = entries?.items else { return }
+                let realm = try Realm()
+                realm.beginWrite()
+                for wallabagEntry in entries {
+                    if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
+                        self.update(entry: entry, from: wallabagEntry)
+                    } else {
+                        self.insert(wallabagEntry, realm)
+                    }
+                }
+                try realm.commitWrite()
+            } catch _ {
+                Log("error")
+            }
+        }
+    }
+
+    private func insert(_ wallabagEntry: WallabagKitEntry, _ realm: Realm) {
+        let entry = Entry()
+        Log("Insert article \(wallabagEntry.id)")
+        entry.hydrate(from: wallabagEntry)
+        realm.add(entry)
+
+        #warning("@TODO move spotlight to an observer")
+        let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
+                                              domainIdentifier: "entry",
+                                              attributeSet: entry.searchableItemAttributeSet
+        )
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
+            if error != nil {
+                Log(error!.localizedDescription)
+            }
+        }
+    }
+
+    private func update(entry: Entry, from article: WallabagKitEntry) {
+        #warning("@TODO handle article without updated date needed")
+        if let articleUpdatedAt = Date.fromISOString(article.updatedAt) {
+            if entry.updatedAt != articleUpdatedAt {
+                if articleUpdatedAt > entry.updatedAt! {
+                    entry.hydrate(from: article)
+                } else {
+                    update(entry: entry)
+                }
+                entry.hydrate(from: article)
+            }
+        }
+    }
+
+    private func update(entry: Entry) {
+        kit.entry(
+            update: entry.id,
+            parameters: [
+                "archive": entry.isArchived.int,
+                "starred": entry.isStarred.int
+        ], queue: nil) { _ in
+            Log("Update from local to server")
         }
     }
 }

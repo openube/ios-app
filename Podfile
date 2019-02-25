@@ -1,13 +1,14 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'wallabag' do
-    pod 'Alamofire', '~> 4.5'
-    pod 'AlamofireImage', '~> 3.3'
+    pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireImage', '~> 3.4'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
     pod 'TUSafariActivity', '~> 1.0'
-    pod 'SideMenu', '~> 3.1'
+    pod 'SideMenu'
     pod 'RealmSwift'
     
     target 'wallabagUITests' do
@@ -22,10 +23,12 @@ target 'wallabag' do
 end
 
 target 'bagit' do
-    pod 'Alamofire', '~> 4.5'
+    pod 'Alamofire', '~> 4.7'
 end
 
-
+target 'wallabagKit' do
+    pod 'Alamofire', '~> 4.7'
+end
 
 post_install do |installer|
     myTargets = ['SideMenu', 'Swifter']
@@ -33,7 +36,11 @@ post_install do |installer|
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name
             target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.2'
+                config.build_settings['SWIFT_VERSION'] = '4.2'
+            end
+        else
+            target.build_configurations.each do |config|
+              config.build_settings['SWIFT_VERSION'] = '4.1'
             end
         end
     end

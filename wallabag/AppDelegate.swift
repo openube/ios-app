@@ -2,17 +2,14 @@
 //  AppDelegate.swift
 //  wallabag
 //
-//  Created by maxime marinel on 19/10/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import AlamofireNetworkActivityIndicator
 import CoreSpotlight
 import UserNotifications
 import RealmSwift
-import WallabagCommon
-import WallabagKit
+import wallabagCommon
+import wallabagKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let setting: WallabagSetting = WallabagSetting()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureTheme()
         configureNetworkIndicator()
-        configureGA()
         configureRealm()
         handleArgs()
 
@@ -46,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func sendUsageVersion() {
         WallabagKit.getVersion(from: setting.get(for: .host)) { [unowned self] version in
-            Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
 
             if version.supportedVersion == .unsupported {
                 Log("Unsupporterd version")
@@ -67,12 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if args.contains("-reset") {
             resetApplication()
         }
-    }
-
-    private func configureGA() {
-        let gai = GAI.sharedInstance()
-        _ = gai?.tracker(withTrackingId: "UA-115437094-1")
-        gai?.trackUncaughtExceptions = true
     }
 
     private func configureRealm() {

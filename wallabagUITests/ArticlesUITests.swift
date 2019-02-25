@@ -2,9 +2,6 @@
 //  ArticlesUITests.swift
 //  wallabag
 //
-//  Created by maxime marinel on 13/05/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
-//
 
 import XCTest
 

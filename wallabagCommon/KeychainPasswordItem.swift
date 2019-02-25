@@ -1,9 +1,6 @@
 //
 //  KeychainPasswordItem.swift
-//  wallabag
-//
-//  Created by maxime marinel on 16/12/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
+//  wallabagCommon
 //
 
 import Foundation

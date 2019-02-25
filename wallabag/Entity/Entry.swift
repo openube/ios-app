@@ -2,12 +2,10 @@
 //  Entry.swift
 //  wallabag
 //
-//  Created by maxime marinel on 27/02/2018.
-//  Copyright © 2018 maxime marinel. All rights reserved.
-//
 
 import Foundation
 import RealmSwift
+import wallabagKit
 
 final class Entry: Object {
     @objc dynamic public var content: String?
@@ -47,3 +45,4 @@ final class Entry: Object {
         readingTime = article.readingTime ?? 0
     }
 }
+

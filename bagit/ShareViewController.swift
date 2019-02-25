@@ -2,15 +2,15 @@
 //  ShareViewController.swift
 //  bagit
 //
-//  Created by maxime marinel on 30/12/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
 
 import UIKit
 import Social
+import wallabagCommon
+import wallabagKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
+    let setting = WallabagSetting()
 
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
 
@@ -45,16 +45,9 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if Setting.isWallabagConfigured(),
-            let host = Setting.getHost(),
-            let username = Setting.getUsername(),
-            let password = Setting.getPassword(username: username),
-            let clientId = Setting.getClientId(),
-            let clientSecret = Setting.getClientSecret(),
-            let attachements = getAttachements() {
-
-            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
-            kit.requestAuth(username: username, password: password) { [unowned self] auth in
+        if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
+            let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
+            kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
                 switch auth {
                 case .success:
                     for attachement in attachements {
@@ -83,16 +76,11 @@ class ShareViewController: UIViewController {
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             return nil
         }
-        for item in items where ((item.attachments as? [NSItemProvider]) != nil) {
-            if let attachements = item.attachments as? [NSItemProvider] {
-                for attachement in attachements {
-                    if attachement.hasItemConformingToTypeIdentifier("public.url") {
-                        att.append(attachement)
-                    }
-                }
+        for item in items {
+            for attachement in item.attachments ?? [] where attachement.hasItemConformingToTypeIdentifier("public.url") {
+                att.append(attachement)
             }
         }
-
         return att
     }
 

@@ -1,17 +1,14 @@
 //
 //  WallabagAuthSuccess.swift
-//  wallabag
-//
-//  Created by maxime marinel on 09/06/2018.
-//  Copyright © 2018 maxime marinel. All rights reserved.
+//  wallabagKit
 //
 
 import Foundation
 
-struct WallabagAuthSuccess: Codable {
-    let accessToken: String
+public struct WallabagAuthSuccess: Codable {
+    public let accessToken: String
     let expiresIn: Int
-    let refreshToken: String
+    public let refreshToken: String
     let tokenType: String
 
     enum CodingKeys: String, CodingKey {

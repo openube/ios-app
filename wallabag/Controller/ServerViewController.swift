@@ -4,8 +4,8 @@
 //
 
 import UIKit
-import WallabagCommon
-import WallabagKit
+import wallabagCommon
+import wallabagKit
 
 final class ServerViewController: UIViewController {
 

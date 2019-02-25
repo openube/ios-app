@@ -160,8 +160,5 @@
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Articole favorite";
 
-/* Class = "UILabel"; text = "Made by Maxime Marinel (@bourvill)"; ObjectID = "wsy-Ao-UlA"; */
-"wsy-Ao-UlA.text" = "Made by Maxime Marinel (@bourvill)";
-
 /* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
 "wu1-pA-PCy.headerTitle" = "Articole";
