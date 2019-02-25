@@ -47,7 +47,6 @@
 		9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */; };
 		9C1AA3BD20C2C7C60023B367 /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */; };
 		9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */; };
-		9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25C9B71EEC99D700B97F6D /* TipViewController.swift */; };
 		9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */; };
 		9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */; };
 		9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */; };
@@ -196,7 +195,6 @@
 		9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthSuccess.json; sourceTree = "<group>"; };
 		9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthWrongPassword.json; sourceTree = "<group>"; };
 		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		9C25C9B71EEC99D700B97F6D /* TipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
 		9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
@@ -418,7 +416,6 @@
 				9CF1F2201DBE97D80086B98B /* ServerViewController.swift */,
 				9CE369731DE632030005E20E /* SettingsTableViewController.swift */,
 				9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */,
-				9C25C9B71EEC99D700B97F6D /* TipViewController.swift */,
 				9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */,
 			);
 			path = Controller;
@@ -1067,7 +1064,6 @@
 				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
 				9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
-				9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */,
 				9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
