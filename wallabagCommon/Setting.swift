@@ -44,7 +44,7 @@ public class Setting {
 }
 
 public class WallabagSetting: Setting {
-    public let sharedDomain = "group.wallabag.share_extension"
+    public let sharedDomain = "group.wallabag-open-source.share_extension"
     public init() {
         super.init(UserDefaults(suiteName: sharedDomain)!)
     }

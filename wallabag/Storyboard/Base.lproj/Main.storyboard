@@ -624,7 +624,7 @@
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="hyy-VQ-rcz" kind="show" identifier="toClientId" id="nah-0H-R3t"/>
+                                    <action selector="nextPressed:" destination="LPm-N3-FEI" eventType="touchUpInside" id="VIi-UA-aNq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -643,6 +643,7 @@
                     <navigationItem key="navigationItem" title="Server" id="03w-5D-czm"/>
                     <connections>
                         <outlet property="server" destination="eWS-vU-XLm" id="HEz-Ei-vTf"/>
+                        <segue destination="hyy-VQ-rcz" kind="show" identifier="toClientId" id="EbF-Uz-dni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vo-5P-413" userLabel="First Responder" sceneMemberID="firstResponder"/>

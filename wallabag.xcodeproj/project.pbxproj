@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
+		097428C02225467E001EEB6F /* black.css in Resources */ = {isa = PBXBuildFile; fileRef = 09C2203C22244A8300DDDC5D /* black.css */; };
 		09C2200322243C6C00DDDC5D /* wallabagKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C2200122243C6C00DDDC5D /* wallabagKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09C2200622243C6C00DDDC5D /* wallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C21FFF22243C6C00DDDC5D /* wallabagKit.framework */; };
 		09C2200722243C6C00DDDC5D /* wallabagKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09C21FFF22243C6C00DDDC5D /* wallabagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -31,7 +32,6 @@
 		09C220382224478B00DDDC5D /* wallabagCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C2202A2224472800DDDC5D /* wallabagCommon.framework */; };
 		09C220392224478B00DDDC5D /* wallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C21FFF22243C6C00DDDC5D /* wallabagKit.framework */; };
 		09C2203B22244A4600DDDC5D /* Black.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2203A22244A4600DDDC5D /* Black.swift */; };
-		09C2203D22244A8300DDDC5D /* black.css in Sources */ = {isa = PBXBuildFile; fileRef = 09C2203C22244A8300DDDC5D /* black.css */; };
 		09C2203F22244AE600DDDC5D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2203E22244AE600DDDC5D /* UIImageView.swift */; };
 		09C2204122244B4D00DDDC5D /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2204022244B4D00DDDC5D /* Bool.swift */; };
 		09C2204322244B9B00DDDC5D /* WallabagSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2204222244B9B00DDDC5D /* WallabagSyncing.swift */; };
@@ -65,7 +65,6 @@
 		9C4537931DD1236B00FF6CFE /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* night.css */; };
 		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
-		9C5145251EEF2EE5005C40B4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5145241EEF2EE5005C40B4 /* StoreKit.framework */; };
 		9C6245D120458C83008B3550 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D020458C83008B3550 /* Entry.swift */; };
 		9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D22045CFDC008B3550 /* EntryExtension.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
@@ -247,7 +246,6 @@
 		9C45378F1DD1236B00FF6CFE /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
 		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
-		9C5145241EEF2EE5005C40B4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9C6245D020458C83008B3550 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		9C6245D22045CFDC008B3550 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				09C220312224472800DDDC5D /* wallabagCommon.framework in Frameworks */,
 				09C2200622243C6C00DDDC5D /* wallabagKit.framework in Frameworks */,
 				AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */,
-				9C5145251EEF2EE5005C40B4 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +416,6 @@
 		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C5145241EEF2EE5005C40B4 /* StoreKit.framework */,
 				9CC378921EB0BB4100C89619 /* Pods_bagit.framework */,
 				9C6C88881EAEA8F20078C491 /* WallabagKit.framework */,
 				9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */,
@@ -903,7 +899,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -987,6 +983,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097428C02225467E001EEB6F /* black.css in Resources */,
 				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
 				9CA232301DFECE74006B29B8 /* light.css in Resources */,
 				622923E91E10F8A5007B2307 /* dusk.css in Resources */,
@@ -1286,7 +1283,6 @@
 				09C2204B22244D2700DDDC5D /* ArticlesTableViewController+UISearchResults.swift in Sources */,
 				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
-				09C2203D22244A8300DDDC5D /* black.css in Sources */,
 				09C2204922244CC800DDDC5D /* ArticlesTableViewController+pastboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1418,11 +1414,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = wallabagKit/Info.plist;
@@ -1431,7 +1427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.district-web.wallabagKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.wallabagKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1453,11 +1449,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = wallabagKit/Info.plist;
@@ -1465,7 +1461,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.district-web.wallabagKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.wallabagKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1484,11 +1480,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = wallabagCommon/Info.plist;
@@ -1497,7 +1493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.district-web.wallabagCommon";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.wallabagCommon";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1516,11 +1512,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = wallabagCommon/Info.plist;
@@ -1528,7 +1524,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.district-web.wallabagCommon";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.wallabagCommon";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1660,12 +1656,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1684,12 +1680,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1776,7 +1772,7 @@
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.bagit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1794,7 +1790,7 @@
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag-open-source.bagit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

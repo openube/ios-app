@@ -45,4 +45,3 @@ final class Entry: Object {
         readingTime = article.readingTime ?? 0
     }
 }
-

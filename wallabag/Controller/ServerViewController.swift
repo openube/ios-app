@@ -18,6 +18,9 @@ final class ServerViewController: UIViewController {
     }
 
     @IBAction func nextPressed(_ sender: UIButton) {
+        defer {
+            sender.isEnabled = true
+        }
         sender.isEnabled = false
         self.setting.set(self.server.text!, for: .host)
         validateServer(string: server.text!) { [unowned self] isValid, _ in
