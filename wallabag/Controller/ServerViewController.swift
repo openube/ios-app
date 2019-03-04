@@ -23,7 +23,7 @@ final class ServerViewController: UIViewController {
         }
         sender.isEnabled = false
         self.setting.set(self.server.text!, for: .host)
-        validateServer(string: server.text!) { [unowned self] isValid, _ in
+        validateServer(string: server.text!) { [unowned self] isValid in
             if isValid {
                 self.performSegue(withIdentifier: "toClientId", sender: nil)
             } else {
@@ -38,20 +38,18 @@ final class ServerViewController: UIViewController {
         }
     }
 
-    private func validateServer(string: String, completion: @escaping (Bool, WallabagVersion?) -> Void ) {
+    private func validateServer(string: String, completion: @escaping (Bool) -> Void ) {
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
             guard let url = URL(string: string),
                 UIApplication.shared.canOpenURL(url),
                 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
-                    completion(false, nil)
+                    completion(false)
                     return
             }
-            WallabagKit.getVersion(from: string) { version in
-                completion(version.supportedVersion != .unsupported, version)
-            }
+            completion(true)
         } catch {
-            completion(false, nil)
+            completion(false)
         }
     }
 }

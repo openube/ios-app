@@ -23,7 +23,6 @@
 		09C2201D22243D8B00DDDC5D /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2201C22243D8B00DDDC5D /* WallabagKitCollectionResponse.swift */; };
 		09C2201F22243DA800DDDC5D /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2201E22243DA800DDDC5D /* WallabagKitEntry.swift */; };
 		09C2202122243DD100DDDC5D /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2202022243DD100DDDC5D /* WallabagKitResponse.swift */; };
-		09C2202322243DEE00DDDC5D /* WallabagVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2202222243DEE00DDDC5D /* WallabagVersion.swift */; };
 		09C2202E2224472800DDDC5D /* wallabagCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C2202C2224472800DDDC5D /* wallabagCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09C220312224472800DDDC5D /* wallabagCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C2202A2224472800DDDC5D /* wallabagCommon.framework */; };
 		09C220322224472800DDDC5D /* wallabagCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09C2202A2224472800DDDC5D /* wallabagCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -197,7 +196,6 @@
 		09C2201C22243D8B00DDDC5D /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
 		09C2201E22243DA800DDDC5D /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
 		09C2202022243DD100DDDC5D /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
-		09C2202222243DEE00DDDC5D /* WallabagVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagVersion.swift; sourceTree = "<group>"; };
 		09C2202A2224472800DDDC5D /* wallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C2202C2224472800DDDC5D /* wallabagCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wallabagCommon.h; sourceTree = "<group>"; };
 		09C2202D2224472800DDDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -397,7 +395,6 @@
 				09C2201C22243D8B00DDDC5D /* WallabagKitCollectionResponse.swift */,
 				09C2201E22243DA800DDDC5D /* WallabagKitEntry.swift */,
 				09C2202022243DD100DDDC5D /* WallabagKitResponse.swift */,
-				09C2202222243DEE00DDDC5D /* WallabagVersion.swift */,
 			);
 			path = wallabagKit;
 			sourceTree = "<group>";
@@ -1226,7 +1223,6 @@
 				09C2201322243D0D00DDDC5D /* WallabagAuthError.swift in Sources */,
 				09C2201922243D5200DDDC5D /* WallabagKit.swift in Sources */,
 				09C2200F22243CC200DDDC5D /* TokenAdapter.swift in Sources */,
-				09C2202322243DEE00DDDC5D /* WallabagVersion.swift in Sources */,
 				09C2201722243D3900DDDC5D /* WallabagError.swift in Sources */,
 				09C2201B22243D7200DDDC5D /* WallabagKitCollection.swift in Sources */,
 				09C2201D22243D8B00DDDC5D /* WallabagKitCollectionResponse.swift in Sources */,
