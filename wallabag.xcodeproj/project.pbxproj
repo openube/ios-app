@@ -74,7 +74,6 @@
 		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
 		9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */; };
-		9C8F8603212A9374009DD0E8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8602212A9374009DD0E8 /* Settings.bundle */; };
 		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
@@ -256,7 +255,6 @@
 		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
 		9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
-		9C8F8602212A9374009DD0E8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -624,7 +622,6 @@
 				9C987A551DB79826005515F4 /* Info.plist */,
 				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
 				9CF4FED41EEB2F7E00653B90 /* Localizable.strings */,
-				9C8F8602212A9374009DD0E8 /* Settings.bundle */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -987,7 +984,6 @@
 				9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
-				9C8F8603212A9374009DD0E8 /* Settings.bundle in Resources */,
 				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
 				9C4537941DD1236B00FF6CFE /* main.css in Resources */,
 				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
