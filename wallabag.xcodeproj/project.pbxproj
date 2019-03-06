@@ -41,7 +41,6 @@
 		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
 		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
-		9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */; };
 		9C174BB720CBDB6500AD8A09 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */; };
 		9C174BB920CBDEF600AD8A09 /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */; };
 		9C174BBB20CBDF5A00AD8A09 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */; };
@@ -86,8 +85,6 @@
 		9CA965A11F16B729009C6377 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA965A01F16B729009C6377 /* Night.swift */; };
 		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
 		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
-		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC378921EB0BB4100C89619 /* Pods_bagit.framework */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CCB702F20998E5D004776B7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB702E20998E5D004776B7 /* Utils.swift */; };
@@ -95,7 +92,6 @@
 		9CDB880720CE485E008A21E3 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB880620CE485E008A21E3 /* UIWebView.swift */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
-		9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */; };
 		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
 		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
 		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
@@ -103,7 +99,6 @@
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
 		9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4FED41EEB2F7E00653B90 /* Localizable.strings */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
-		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 		E33A074AEB8B541465524EB3 /* Pods_wallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A03ACBCD7C667DDD2AC2C3 /* Pods_wallabagKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,26 +124,12 @@
 			remoteGlobalIDString = 9C987A421DB79826005515F4;
 			remoteInfo = wallabag;
 		};
-		9C987A661DB79826005515F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
-		};
 		9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9CBA6C5C1E16FC2B000B9AE6;
 			remoteInfo = bagit;
-		};
-		9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -221,7 +202,6 @@
 		7E638ED31F433B180014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
 		9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
 		9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
 		9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
@@ -263,8 +243,6 @@
 		9C987A551DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C987A5A1DB79826005515F4 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A601DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		9CA9659A1F16B68B009C6377 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
 		9CA9659C1F16B6B9009C6377 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
@@ -276,9 +254,6 @@
 		9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
 		9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagScreenshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagScreenshotUITests.swift; sourceTree = "<group>"; };
-		9CC0D71B1E22AB15002E4E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC378921EB0BB4100C89619 /* Pods_bagit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_bagit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Pods_bagit.framework"; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -288,7 +263,6 @@
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
 		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
 		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
@@ -301,7 +275,6 @@
 		9CF4FED31EEB2F7E00653B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CF4FED61EEB2FB300653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CF4FED71EEB2FB500653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		9F8741C1F8EC3CA306B67BE6 /* Pods-wallabag-wallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-wallabagKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-wallabagKit/Pods-wallabag-wallabagKit.release.xcconfig"; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		ADDE15984F4CBBCC13E57958 /* Pods-wallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagKit/Pods-wallabagKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -348,14 +321,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A621DB79826005515F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,13 +329,6 @@
 				09C220392224478B00DDDC5D /* wallabagKit.framework in Frameworks */,
 				9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */,
 				94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CC0D7141E22AB15002E4E94 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,9 +544,7 @@
 				9C987A441DB79826005515F4 /* Products */,
 				9CBA6C5E1E16FC2B000B9AE6 /* bagit */,
 				9C987A451DB79826005515F4 /* wallabag */,
-				9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */,
 				9C987A5D1DB79826005515F4 /* wallabagTests */,
-				9C987A681DB79826005515F4 /* wallabagUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -597,9 +553,7 @@
 			children = (
 				9C987A431DB79826005515F4 /* wallabag.app */,
 				9C987A5A1DB79826005515F4 /* wallabagTests.xctest */,
-				9C987A651DB79826005515F4 /* wallabagUITests.xctest */,
 				9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */,
-				9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */,
 				09C21FFF22243C6C00DDDC5D /* wallabagKit.framework */,
 				09C2202A2224472800DDDC5D /* wallabagCommon.framework */,
 			);
@@ -639,16 +593,6 @@
 			path = wallabagTests;
 			sourceTree = "<group>";
 		};
-		9C987A681DB79826005515F4 /* wallabagUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */,
-				9C987A6B1DB79826005515F4 /* Info.plist */,
-				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
-			);
-			path = wallabagUITests;
-			sourceTree = "<group>";
-		};
 		9CA965991F16B669009C6377 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,16 +614,6 @@
 				9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */,
 			);
 			path = bagit;
-			sourceTree = "<group>";
-		};
-		9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9CC0D71B1E22AB15002E4E94 /* Info.plist */,
-				9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */,
-				9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */,
-			);
-			path = wallabagScreenshotUITests;
 			sourceTree = "<group>";
 		};
 		9CE367AA1EEB148E0004F0A0 /* Entity */ = {
@@ -803,26 +737,6 @@
 			productReference = 9C987A5A1DB79826005515F4 /* wallabagTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C987A641DB79826005515F4 /* wallabagUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C987A741DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
-			buildPhases = (
-				BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */,
-				9C987A611DB79826005515F4 /* Sources */,
-				9C987A621DB79826005515F4 /* Frameworks */,
-				9C987A631DB79826005515F4 /* Resources */,
-				F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9C987A671DB79826005515F4 /* PBXTargetDependency */,
-			);
-			name = wallabagUITests;
-			productName = wallabagUITests;
-			productReference = 9C987A651DB79826005515F4 /* wallabagUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		9CBA6C5C1E16FC2B000B9AE6 /* bagit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */;
@@ -840,24 +754,6 @@
 			productName = bagit;
 			productReference = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */;
-			buildPhases = (
-				9CC0D7131E22AB15002E4E94 /* Sources */,
-				9CC0D7141E22AB15002E4E94 /* Frameworks */,
-				9CC0D7151E22AB15002E4E94 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */,
-			);
-			name = wallabagScreenshotUITests;
-			productName = wallabagScreenshotUITests;
-			productReference = 9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -904,13 +800,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C987A421DB79826005515F4;
 					};
-					9C987A641DB79826005515F4 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9C987A421DB79826005515F4;
-					};
 					9CBA6C5C1E16FC2B000B9AE6 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = G97URPCGB8;
@@ -921,13 +810,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					9CC0D7161E22AB15002E4E94 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9C987A421DB79826005515F4;
 					};
 				};
 			};
@@ -950,8 +832,6 @@
 				9C987A421DB79826005515F4 /* wallabag */,
 				9CBA6C5C1E16FC2B000B9AE6 /* bagit */,
 				9C987A591DB79826005515F4 /* wallabagTests */,
-				9C987A641DB79826005515F4 /* wallabagUITests */,
-				9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */,
 				09C21FFE22243C6C00DDDC5D /* wallabagKit */,
 				09C220292224472800DDDC5D /* wallabagCommon */,
 			);
@@ -1006,26 +886,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A631DB79826005515F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CBA6C5B1E16FC2B000B9AE6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C39B5C52027AAC400CA6B36 /* Assets.xcassets in Resources */,
 				9C431D561E63094B0009439C /* Media.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CC0D7151E22AB15002E4E94 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,24 +1019,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1187,24 +1035,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swifter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1295,29 +1125,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A611DB79826005515F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */,
-				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CBA6C591E16FC2B000B9AE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CC0D7131E22AB15002E4E94 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */,
-				9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,20 +1151,10 @@
 			target = 9C987A421DB79826005515F4 /* wallabag */;
 			targetProxy = 9C987A5B1DB79826005515F4 /* PBXContainerItemProxy */;
 		};
-		9C987A671DB79826005515F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9C987A661DB79826005515F4 /* PBXContainerItemProxy */;
-		};
 		9CBA6C661E16FC2B000B9AE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9CBA6C5C1E16FC2B000B9AE6 /* bagit */;
 			targetProxy = 9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */;
-		};
-		9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1722,38 +1524,6 @@
 			};
 			name = Release;
 		};
-		9C987A751DB79826005515F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Debug;
-		};
-		9C987A761DB79826005515F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Release;
-		};
 		9CBA6C681E16FC2B000B9AE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */;
@@ -1787,38 +1557,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
-		9CC0D71E1E22AB15002E4E94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Debug;
-		};
-		9CC0D71F1E22AB15002E4E94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
 			};
 			name = Release;
 		};
@@ -1870,29 +1608,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C987A741DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9C987A751DB79826005515F4 /* Debug */,
-				9C987A761DB79826005515F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CBA6C681E16FC2B000B9AE6 /* Debug */,
 				9CBA6C691E16FC2B000B9AE6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9CC0D71E1E22AB15002E4E94 /* Debug */,
-				9CC0D71F1E22AB15002E4E94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
