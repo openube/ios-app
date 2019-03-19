@@ -10,11 +10,6 @@ target 'wallabag' do
     pod 'TUSafariActivity', '~> 1.0'
     pod 'SideMenu'
     pod 'RealmSwift'
-    
-    target 'wallabagUITests' do
-        inherit! :search_paths
-        pod 'Swifter', '~> 1.3.3'
-    end
 
     target 'wallabagTests' do
         inherit! :search_paths
